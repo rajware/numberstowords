@@ -1,0 +1,23 @@
+{
+    "source": {
+        "include": ["src", "README.md"]
+    },
+    "opts": {
+        "destination": "docs/reference",
+        "template": "templates/default",
+        "sort": false,
+        "readme": "./README.md"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "markdown": {
+        "hardwrap": false,
+        "idInHeadings": true
+    },
+    "templates": {
+        "default": {
+            "outputSourceFiles": false
+        }
+    }
+}

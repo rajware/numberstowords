@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="Opts">Opts</h4>
+
+
+
+
+<div class="description">
+    <p>The Opts object defines options available while converting to words.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>integerOnly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, rounds up number to the nearest integer before converting. If false,
+converts decimal numbers like this: 1.12 becomes 'one point one two', unless the useCurrency option is true.
+Default: true.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>decimalPlaces</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>If intergerOnly is false, considers up to this many decimal places for
+conversion. Can be a number between 0 and 10, both inclusive. Setting decimalPlaces to 0 is the same as
+setting integerOnly to true - therefore,  decimals will be truncated, not rounded. Ignored when useCurrency
+is true, in which case decimal places is fixed at 2. Default: 2.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useComma</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, puts a comma after each &quot;large&quot; number group. E.g. 1101 becomes 'one
+thousand, one hundred one'. Default: false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useAnd</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, puts the 'and' word between hundreds and unit words. Eg. 1101 becomes 'one
+thousand, one hundred and one'. Default: false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useOnlyWord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, puts the 'only' word at the end. Eg. 12 becomes 'twelve only'.
+Default: false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useIndianStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, numbers greater than 99999 are grouped using the Indian units lakhs
+and crores. If false, they are grouped using millions, billions and trillions. Default: true.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useCurrency</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, uses the major (and minor if integerOnly is false) currency symbols as
+described below. Note that if integerOnly is set to false, decimals are rounded off to 2 decimal places only. The
+value of the decimalPlaces property is ignored for the currentcy format. Default: false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>majorCurrencySymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the major currency symbol, like 'dollar' or 'ringgit'. Default:
+'rupees'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minorCurrencySymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the minor currency symbols, like 'cents' or 'sen'. Default: 'paise'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>majorCurrencyAtEnd</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if false, the major currency symbol is at the start of the words, e.g. 2
+becomes 'rupees two'. If true, e.g. 2 becomes 'two rupees'. Default: false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>minorCurrencyAtEnd</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if false, the minor currency symbol is at the start of the appropriate
+part, e.g. 2.22 becomes 'rupees two and paise twenty two'. If true, e.g. 2.22 becomes 'rupees two and twenty two
+paise'. Note that the 'and' word will always be used between the major and minor currency parts. Default:true.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>suppressMajorIfZero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, will not convert the major part to words if it is zero. E.g.
+0.22 will become 'twenty two paise'. If false, 0.22 will become 'rupees zero and twenty two paise'. Default
+false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>suppressMinorIfZero</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>if true, will not convert the minor part to words if it is zero. E.g.
+22.0 will become 'rupees twenty two'. If false, 22.0 will become 'rupees twenty two and zero paise'. Default
+false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>useCase</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the casing of the words. Possible values are 'lower', 'upper', 'proper' and
+'sentence'. Default: 'lower'.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Words">Words</h4>
+
+
+
+
+<div class="description">
+    <p>The Words object defines the words that are used in conversion.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>unitWords</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>describes the &quot;unit&quot; words, zero to nineteen. Array indices match the
+word. E.g.: unitWords[0] is 'zero'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tenWords</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>describes the &quot;tens&quot; words, twenty to ninety. Array indices match the
+factor of ten. E.g.: tenWords[3] is 'thirty'. The first two indices should be undefined.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>smallAmountWords</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>words for &quot;small&quot; large amounts. The keys are &quot;hundred&quot;
+and &quot;thousand&quot;.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bigAmountWords</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>words for &quot;big&quot; large amounts. The keys are &quot;lakh&quot;, &quot;crore&quot;,
+&quot;million&quot;, &quot;billion&quot; and &quot;trillion&quot;.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>andWord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>word used for joining hundreds with units, and joining the integer part with decimal
+part. Default is 'and'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pointWord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>word used for describing the decimal part in the international format. Default is
+'point', as in 'one point five'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>onlyWord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>word used for describing the end of an amount. Default is 'only'.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>negativeWord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>word used for describing negative numbers. Default is 'minus'.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="numberstowords_.html">numberstowords</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Nov 11 2025 11:16:20 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

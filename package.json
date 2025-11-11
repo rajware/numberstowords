@@ -2,9 +2,11 @@
   "name": "@rajware/numberstowords",
   "version": "0.3.0",
   "description": "A javascript library to convert numbers to words. Supports both international and Indian convention.",
+  "type": "module",
   "main": "src/numberstowords.js",
   "scripts": {
-    "builddocs": "jsdoc -d docs/reference src/numberstowords.js -R README.md"
+    "test": "node --test \"./tests/*.js\"",
+    "builddocs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,6 @@
   },
   "homepage": "https://github.com/rajware/numberstowords#readme",
   "devDependencies": {
-    "jsdoc": "^3.4.3"
+    "jsdoc": "^4.0.5"
   }
 }
