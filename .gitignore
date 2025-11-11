@@ -37,7 +37,6 @@ jspm_packages
 .node_repl_history
 
 # VS Code files and directories
-jsconfig.json
 typings.json
 typings
 
@@ -48,3 +47,7 @@ typings
 # CodeLite IDE
 *.workspace
 .codelite
+
+# Generated output directories
+dist
+out
