@@ -3,10 +3,38 @@
   "version": "0.3.0",
   "description": "A javascript library to convert numbers to words. Supports both international and Indian convention.",
   "type": "module",
-  "main": "src/numberstowords.js",
+  "main": "./dist/numberstowords.cjs",
+  "module": "./dist/numberstowords.cjs",
+  "browser": "./dist/numberstowords.min.js",
+  "types": "./dist/numberstowords.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "browser": "./dist/numberstowords.min.js",
+        "default": "./dist/numberstowords.mjs",
+        "types": "./dist/numberstowords.d.ts"
+      },
+      "require": {
+        "browser": "./dist/numberstowords.min.js",
+        "default": "./dist/numberstowords.cjs",
+        "types": "./dist/numberstowords.d.cts"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "test": "node --test \"./tests/*.js\"",
-    "builddocs": "jsdoc -c jsdoc.json"
+    "build": "npm run clean && npm run build:package && npm run build:types",
+    "build:package": "rollup -c",
+    "build:types": "node scripts/build.js copytypes",
+    "build:docs": "jsdoc -c jsdoc.json",
+    "clean": "node scripts/build.js clean",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +47,8 @@
   },
   "homepage": "https://github.com/rajware/numberstowords#readme",
   "devDependencies": {
-    "jsdoc": "^4.0.5"
+    "@rollup/plugin-terser": "^0.4.4",
+    "jsdoc": "^4.0.5",
+    "rollup": "^4.53.1"
   }
 }
