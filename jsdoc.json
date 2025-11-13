@@ -3,7 +3,7 @@
         "include": ["src", "assets/README.md"]
     },
     "opts": {
-        "destination": "docs/reference",
+        "destination": "docs/",
         "template": "templates/default",
         "sort": false,
         "readme": "assets/README.md"

@@ -21,7 +21,7 @@ A lightweight JavaScript library to convert numbers to words. Supports both inte
 
 #### Node.js applications
 
-Install by running:
+Install from npm (recommended):
 
 ```bash
 npm install @rajware/numberstowords
@@ -29,13 +29,13 @@ npm install @rajware/numberstowords
 
 Then import it using: 
 
-```
+```javascript
 import numberstowords from '@rajware/numberstowords';
 ``` 
 
 or 
 
-```
+```javascript
 const numberstowords = require('@rajware/numberstowords');
 ```
 
@@ -53,6 +53,8 @@ You can get code completion in Visual Studio Code by adding a reference comment:
 ```javascript
 /// <reference path="https://unpkg.com/@rajware/numberstowords@latest/dist/numberstowords.d.ts" />
 ```
+
+You can also download the minified Javascript and the type definition files from the [latest GitHub release](https://github.com/rajware/numberstowords/releases/latest).
 
 ### Basic Usage
 
@@ -110,28 +112,7 @@ For complete documentation including:
 - Custom word dictionaries
 - API reference
 
-Visit: **[https://rajware.github.io/numberstowords/reference/](https://rajware.github.io/numberstowords/reference/)**
-
-## 🌐 Browser Usage
-
-### Via CDN
-
-```html
-<script src="https://unpkg.com/@rajware/numberstowords@latest/dist/numberstowords.min.js"></script>
-
-<script>
-  const words = numberstowords.toInternationalWords(42);
-  console.log(words); // "forty two"
-</script>
-```
-
-### Local Download
-
-Download **numberstowords.min.js** from the [latest release](https://github.com/rajware/numberstowords/releases/latest) and include it:
-
-```html
-<script src="js/numberstowords.min.js"></script>
-```
+Visit: **[https://rajware.github.io/numberstowords/](https://rajware.github.io/numberstowords/)**
 
 ## 🐛 Issues & Support
 
