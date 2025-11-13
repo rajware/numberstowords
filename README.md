@@ -1,104 +1,138 @@
 # numberstowords
 
-A javascript library to convert numbers to words. Supports both international and Indian convention.
+[![npm version](https://img.shields.io/npm/v/@rajware/numberstowords.svg)](https://www.npmjs.com/package/@rajware/numberstowords)
+[![License](https://img.shields.io/github/license/rajware/numberstowords.svg)](LICENSE)
+[![npm downloads](https://img.shields.io/npm/dm/@rajware/numberstowords.svg)](https://www.npmjs.com/package/@rajware/numberstowords)
+[![Bundle size](https://img.shields.io/bundlephobia/minzip/@rajware/numberstowords)](https://bundlephobia.com/package/@rajware/numberstowords)
 
-## How to get it
-### For browsers
-Download the zip from github, and put the file numberstowords.js in your web site's js folder. Then, include it on an HTML page using a SCRIPT tag.
+A lightweight JavaScript library to convert numbers to words. Supports both international and Indian numbering conventions with extensive customization options.
+
+## ✨ Features
+
+- 🌍 **Dual conventions**: International (million, billion) and Indian (lakh, crore) numbering systems
+- 💰 **Currency formatting**: Convert amounts to words with customizable currency symbols
+- 🎨 **Highly customizable**: Control commas, "and" placement, casing, and more
+- 📦 **Universal**: Works in browsers (via CDN or local) or node.js (CommonJS/ESM)
+- 🪶 **Lightweight**: Minimal dependencies, maximum functionality
+
+## 🚀 Quick Start
+
+### Installation
+
+#### Node.js applications
+
+Install by running:
+
+```bash
+npm install @rajware/numberstowords
+```
+
+Then import it using: 
+
+```
+import numberstowords from '@rajware/numberstowords';
+``` 
+
+or 
+
+```
+const numberstowords = require('@rajware/numberstowords');
+```
+
+#### Browser applications
+
+Load it from a CDN like this.
 
 ```html
-<script src="js/numberstowords.js"></script>
+<script src="https://unpkg.com/@rajware/numberstowords@latest/dist/numberstowords.min.js"></script>
+
 ```
 
-
-### For node
-Get it from npm using
-```bash
-npm install --save @rajch/numberstowords
-```
-Then, use it like so:
+You can get code completion in Visual Studio Code by adding a reference comment:
 
 ```javascript
-var numberstowords = require('@rajch/numberstowords');
+/// <reference path="https://unpkg.com/@rajware/numberstowords@latest/dist/numberstowords.d.ts" />
 ```
-## How to use it
+
+### Basic Usage
+
 ```javascript
-var x = numberstowords.toIndianWords(123405); 
-// x: one lakh twenty three thousand four hundred five
 
-var x = numberstowords.toInternationalWords(123405);
-// x: one hundred twenty three thousand four hundred five
+// Indian convention
+numberstowords.toIndianWords(123405);
+// → "one lakh twenty three thousand four hundred five"
 
-var x = numberstowords.toIndianWords(123405, {useComma:true, useAnd:true});
-// x: one lakh, twenty three thousand, four hundred and five
+// International convention
+numberstowords.toInternationalWords(123405);
+// → "one hundred twenty three thousand four hundred five"
 
-var x = numberstowords.toInternationalWords(123405, {useComma:true, useAnd:true});
-// x: one hundred and twenty three thousand, four hundred and five
-
-// Really large numbers
-var x = numberstowords.toIndianWords(260000000000, {useComma:true, useAnd:true});
-// x: twenty six thousand crore
-
-var x = numberstowords.toInternationalWords(260000000000, {useComma:true, useAnd:true});
-// x: nine hundred and ninety nine trillion, nine hundred and ninety nine billion, \
-//    nine hundred and ninety nine million, nine hundred and ninety nine thousand, \
-//    nine hundred and ninety nine
-
-// Decimals are now allowed
-var x = numberstowords.toIndianWords(26.67, {integerOnly:false});
-// x: twenty six point six seven
-
-// Rounded up to two decimal places only. 
-var x = numberstowords.toIndianWords(26.6764, {integerOnly:false});
-// x: twenty six point six eight
-
-// You can use the 'currency format'
-var x = numberstowords.toIndianWords(26.67, {
-                                integerOnly:false, 
-                                useCurrency: true,
-                                majorCurrencySymbol: 'ringit',
-                                minorCurrencySymbol: 'sen' });
-// x: ringit twenty six and sixty seven sen
-
-// With some control options
-var x = numberstowords.toIndianWords(26.67, {
-                                integerOnly:false, 
-                                useCurrency: true,
-                                majorCurrencySymbol: 'ringit',
-                                minorCurrencySymbol: 'sen',
-                                majorCurrencyAtEnd: true,
-                                minorCurrencyAtEnd: false,
-                                useOnlyWord: true,
-                                useCase: 'proper' });
-// x: Twenty Six Ringit And Sen Sixty Seven Only
-
-// You can see all options and their default values
-var x = numberstowords.options;
-/* x: { useComma: false,
-  useAnd: false,
-  useOnlyWord: false,
-  integerOnly: true,
-  useCurrency: false,
-  majorCurrencySymbol: 'rupees',
-  minorCurrencySymbol: 'paise',
-  majorCurrencyAtEnd: false,
-  minorCurrencyAtEnd: true,
-  suppressMajorIfZero: false,
-  suppressMinorIfZero: false,
-  useCase: 'lower' }
-*/
-
-// You can even change the default values.
-numberstowords.options.useCurrency = true;
-// Now all calls will return currency format by default
-var x = numberstowords.toInternationalWords(24);
-// x: rupees twenty four
-
-// default values can be reset
- numberstowords.resetOptions();
- var x = numberstowords.toInternationalWords(24);
- // x: twenty four
-
+// With formatting options
+numberstowords.toIndianWords(123405, { useComma: true, useAnd: true });
+// → "one lakh, twenty three thousand, four hundred and five"
 ```
 
-Read the documentation [here](https://rajch.github.io/numberstowords/reference/).
+## 💡 Common Use Cases
+
+```javascript
+// Currency formatting
+numberstowords.toIndianWords(1250.75, {
+  integerOnly: false,
+  useCurrency: true,
+  majorCurrencySymbol: 'dollars',
+  minorCurrencySymbol: 'cents'
+});
+// → "dollars one thousand two hundred fifty and seventy five cents"
+
+// Large numbers
+numberstowords.toIndianWords(260000000000, { useComma: true });
+// → "twenty six thousand crore"
+
+// Decimal precision
+numberstowords.toIndianWords(26.6764, { 
+  integerOnly: false, 
+  decimalPlaces: 4 
+});
+// → "twenty six point six seven six four"
+
+// Proper case with "only" suffix
+numberstowords.toIndianWords(1500, { 
+  useOnlyWord: true, 
+  useCase: 'proper' 
+});
+// → "One Thousand Five Hundred Only"
+```
+
+## 📖 Documentation
+
+For complete documentation including:
+- All configuration options
+- Advanced examples
+- Custom word dictionaries
+- API reference
+
+Visit: **[https://rajware.github.io/numberstowords/reference/](https://rajware.github.io/numberstowords/reference/)**
+
+## 🌐 Browser Usage
+
+### Via CDN
+
+```html
+<script src="https://unpkg.com/@rajware/numberstowords@latest/dist/numberstowords.min.js"></script>
+
+<script>
+  const words = numberstowords.toInternationalWords(42);
+  console.log(words); // "forty two"
+</script>
+```
+
+### Local Download
+
+Download **numberstowords.min.js** from the [latest release](https://github.com/rajware/numberstowords/releases/latest) and include it:
+
+```html
+<script src="js/numberstowords.min.js"></script>
+```
+
+## 🐛 Issues & Support
+
+Found a bug or have a question? Please [open an issue](https://github.com/rajware/numberstowords/issues) on GitHub.

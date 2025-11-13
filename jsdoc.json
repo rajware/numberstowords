@@ -1,12 +1,12 @@
 {
     "source": {
-        "include": ["src", "README.md"]
+        "include": ["src", "assets/README.md"]
     },
     "opts": {
         "destination": "docs/reference",
         "template": "templates/default",
         "sort": false,
-        "readme": "./README.md"
+        "readme": "assets/README.md"
     },
     "plugins": [
         "plugins/markdown"
